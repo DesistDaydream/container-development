@@ -1,0 +1,65 @@
+{
+  "architecture": "amd64",
+  "created": "2021-08-17T16:38:31.174884751+08:00",
+  "history": [
+    {
+      "created": "2020-10-22T02:19:24.33416307Z",
+      "created_by": "/bin/sh -c #(nop) ADD file:f17f65714f703db9012f00e5ec98d0b2541ff6147c2633f7ab9ba659d0c507f4 in / "
+    },
+    {
+      "created": "2020-10-22T02:19:24.499382102Z",
+      "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+      "empty_layer": true
+    },
+    {
+      "created": "2021-08-17T16:04:08.177778645+08:00",
+      "created_by": "RUN /bin/sh -c sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \u0026\u0026     apk update \u0026\u0026     apk add --no-cache vim bash tcpdump curl wget strace mysql-client iproute2 redis jq iftop tzdata tar nmap bind-tools htop \u0026\u0026     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2021-08-17T16:04:29.900220581+08:00",
+      "created_by": "RUN /bin/sh -c wget -O /usr/bin/httpstat https://github.com/davecheney/httpstat/releases/download/v1.0.0/httpstat-linux-amd64-v1.0.0 \u0026\u0026     chmod +x /usr/bin/httpstat # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2021-08-17T16:38:31.174884751+08:00",
+      "created_by": "COPY /go/bin/grpcurl /usr/bin/grpcurl # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2021-08-17T16:38:31.174884751+08:00",
+      "created_by": "ENV TZ=Asia/Shanghai LC_ALL=C.UTF-8 LANG=C.UTF-8 LANGUAGE=C.UTF-8",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2021-08-17T16:38:31.174884751+08:00",
+      "created_by": "ENTRYPOINT [\"/bin/bash\"]",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    }
+  ],
+  "os": "linux",
+  "rootfs": {
+    "type": "layers",
+    "diff_ids": [
+      "sha256:ace0eda3e3be35a979cec764a3321b4c7d0b9e4bb3094d20d3ff6782961a8d54",
+      "sha256:4041c1a8637589d2c872e14d1068376c5e21bf96a837fa2225f91066e84b1e55",
+      "sha256:6f5211c02ff0b7e40b9ca7c5f62cc8732647b046e22cc5046053412d1fef97f6",
+      "sha256:6e63a43fa96c6ea85d34c23db4c28b76ecda01c03aa721f6a3355b04501bdc58"
+    ]
+  },
+  "config": {
+    "Entrypoint": [
+      "/bin/bash"
+    ],
+    "Env": [
+      "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "TZ=Asia/Shanghai",
+      "LC_ALL=C.UTF-8",
+      "LANG=C.UTF-8",
+      "LANGUAGE=C.UTF-8"
+    ],
+    "ArgsEscaped": true
+  }
+}
