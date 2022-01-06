@@ -10,6 +10,8 @@ import (
 func main() {
 	username := pflag.String("u", "", "用户名")
 	password := pflag.String("p", "", "密码")
+	srcImage := pflag.StringP("src-image", "s", "", "源镜像")
+	destImage := pflag.StringP("dest-image", "d", "", "源镜像")
 	pflag.Parse()
 
 	// 实例化认证信息
@@ -24,7 +26,7 @@ func main() {
 	destOptions := remote.WithAuth(auth)
 
 	// 获取源镜像
-	srcRef, err := name.ParseReference("nginx")
+	srcRef, err := name.ParseReference(*srcImage)
 	if err != nil {
 		panic(err)
 	}
@@ -35,7 +37,7 @@ func main() {
 	}
 
 	// 指定镜像推送的目标
-	destRef, err := name.ParseReference("lchdzh/nginx:v1")
+	destRef, err := name.ParseReference(*destImage)
 	if err != nil {
 		panic(err)
 	}
