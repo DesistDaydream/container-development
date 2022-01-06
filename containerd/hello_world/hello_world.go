@@ -21,11 +21,20 @@ func helloWorld() error {
 	ctx := namespaces.WithNamespace(context.Background(), "default")
 
 	// 通过 containerd 的客户端实例化一个镜像存储器
-	imageStore := client.ImageService()
-
+	imagesStore := client.ImageService()
 	// 列出 ctx 环境中的所有镜像
-	images, _ := imageStore.List(ctx)
-	fmt.Println(images)
+	images, _ := imagesStore.List(ctx)
+	for _, image := range images {
+		fmt.Println(image.Name)
+	}
+
+	// 通过 containerd 的客户端实例化一个容器存储器
+	containersStroe := client.ContainerService()
+	// 列出 ctx 环境中的所有容器
+	containers, _ := containersStroe.List(ctx)
+	for _, container := range containers {
+		fmt.Println(container.Spec)
+	}
 	return nil
 }
 

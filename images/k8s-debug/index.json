@@ -1,0 +1,13 @@
+{
+   "schemaVersion": 2,
+   "manifests": [
+      {
+         "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+         "size": 1163,
+         "digest": "sha256:ee24b921ba004624b350e7f140e68c6a7d8297bb815b4ca526979a7e66cec15a",
+         "annotations": {
+            "dev.ggcr.image.name": ""
+         }
+      }
+   ]
+}
