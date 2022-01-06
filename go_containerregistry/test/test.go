@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	repository, err := name.NewRepository("lchdzh/k8s-debug")
+	repository, err := name.NewRepository("lchdzh/nginx")
 	if err != nil {
 		panic(err)
 	}
