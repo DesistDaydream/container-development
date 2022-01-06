@@ -57,14 +57,15 @@ func SaveImage(img v1.Image) {
 		panic(err)
 	}
 }
+
 func main() {
 	img, err := crane.Pull("lchdzh/k8s-debug:v1")
 	if err != nil {
 		panic(err)
 	}
 
-	// SaveImage(img)
 	ImageConfiguration(img)
 	ImageManifest(img)
 	ImageLayers(img)
+	// SaveImage(img)
 }
