@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/containerd/containerd v1.5.9
 	github.com/google/go-containerregistry v0.8.0
+	github.com/sirupsen/logrus v1.8.1
 )
 
 require (
@@ -37,7 +38,6 @@ require (
 	github.com/opencontainers/runtime-spec v1.0.3-0.20210326190908-1c3f411f0417 // indirect
 	github.com/opencontainers/selinux v1.8.2 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/vbatts/tar-split v0.11.2 // indirect
 	go.opencensus.io v0.23.0 // indirect
 	golang.org/x/net v0.0.0-20211216030914-fe4d6282115f // indirect
